@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>한금서 면접 — 보험 완전 정복 v2</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Black+Han+Sans&display=swap" rel="stylesheet">
+<style>
+:root{--r:#D93B1E;--rl:#FFF0EC;--n:#1B3A5C;--nl:#E8EEF5;--g:#1E7B3A;--gl:#E8F5EC;--a:#B36800;--al:#FFF8E6;--bg:#F8F7F4;--w:#FFF;--t:#1A1A1A;--s:#555;--m:#888;--b:#E2DED8;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--t);line-height:1.75;font-size:15px;}
+.hero{background:linear-gradient(155deg,#0A1520 0%,#1B3A5C 45%,#D93B1E 100%);color:#fff;padding:56px 40px 48px;position:relative;overflow:hidden;}
+.hero::after{content:'v2.0';position:absolute;top:20px;right:24px;font-size:11px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:4px 10px;border-radius:10px;color:rgba(255,255,255,.6);}
+.hero-badge{display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.75);padding:5px 14px;border-radius:20px;font-size:12px;letter-spacing:1px;margin-bottom:20px;}
+.hero h1{font-family:'Black Han Sans',sans-serif;font-size:36px;font-weight:400;line-height:1.25;margin-bottom:10px;letter-spacing:-1px;}
+.hero h1 em{color:#FF8A6A;font-style:normal;}
+.hero h1 .small{font-family:'Noto Sans KR',sans-serif;font-size:15px;font-weight:500;display:block;color:rgba(255,255,255,.6);margin-bottom:6px;letter-spacing:0;}
+.hero h1 .accent{background:linear-gradient(90deg,#FF8A6A,#FFD166);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-desc{color:rgba(255,255,255,.6);font-size:13px;margin-bottom:24px;}
+.chips{display:flex;flex-wrap:wrap;gap:7px;}
+.chip{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.8);padding:4px 12px;border-radius:16px;font-size:11px;}
+.chip.new{background:rgba(217,59,30,.4);border-color:rgba(217,59,30,.6);}
+.toc{background:var(--w);border-bottom:1px solid var(--b);padding:0 28px;display:flex;overflow-x:auto;gap:0;position:sticky;top:0;z-index:50;scrollbar-width:none;}
+.toc::-webkit-scrollbar{display:none;}
+.toc a{display:block;padding:14px 16px;font-size:12px;font-weight:500;color:var(--s);text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent;transition:all .2s;}
+.toc a:hover{color:var(--r);border-bottom-color:var(--r);}
+.wrap{max-width:860px;margin:0 auto;padding:44px 32px 100px;}
+.sec{margin-bottom:68px;scroll-margin-top:56px;}
+.sec-head{display:flex;align-items:center;gap:14px;margin-bottom:26px;padding-bottom:14px;border-bottom:2px solid var(--b);}
+.sec-num{width:36px;height:36px;border-radius:50%;background:var(--r);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;flex-shrink:0;}
+.sec-num.new{background:#1A1A1A;}
+.sec-title{font-size:21px;font-weight:700;}
+.new-badge{display:inline-block;background:var(--r);color:#fff;font-size:10px;font-weight:700;padding:2px 7px;border-radius:3px;margin-left:8px;vertical-align:middle;letter-spacing:1px;}
+.sec-sub{font-size:12px;font-weight:400;color:var(--m);margin-left:6px;}
+.call{border-radius:10px;padding:18px 22px;margin:16px 0;}
+.call.r{background:var(--rl);border-left:4px solid var(--r);}
+.call.n{background:var(--nl);border-left:4px solid var(--n);}
+.call.g{background:var(--gl);border-left:4px solid var(--g);}
+.call.a{background:var(--al);border-left:4px solid var(--a);}
+.call.dk{background:#1A1A1A;color:#fff;border-left:4px solid var(--r);}
+.call.warn{background:#FFF9E6;border:1px solid #FFD54F;border-left:4px solid #F9A825;}
+.cl{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;}
+.call.r .cl{color:var(--r);}
+.call.n .cl{color:var(--n);}
+.call.g .cl{color:var(--g);}
+.call.a .cl{color:var(--a);}
+.call.dk .cl{color:#FF8A6A;}
+.call.warn .cl{color:#E65100;}
+.call p,.call li{font-size:14px;line-height:1.7;}
+.call ul{list-style:none;padding:0;}
+.call ul li{padding:4px 0 4px 16px;position:relative;}
+.call ul li::before{content:'·';position:absolute;left:4px;color:var(--r);font-weight:700;}
+.call.dk ul li::before,.call.dk p strong{color:#FF8A6A;}
+.card{background:var(--w);border:1px solid var(--b);border-radius:12px;padding:22px;margin:14px 0;}
+.card h4{font-size:15px;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.card h4::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--r);flex-shrink:0;}
+.tbl{overflow-x:auto;margin:12px 0;}
+table{width:100%;border-collapse:collapse;font-size:13.5px;}
+th{background:#F3F1EC;padding:10px 14px;text-align:left;font-size:12px;font-weight:700;color:var(--s);border-bottom:2px solid var(--b);}
+td{padding:11px 14px;border-bottom:1px solid var(--b);vertical-align:top;line-height:1.6;}
+tr:last-child td{border-bottom:none;}
+tr:hover td{background:#FAFAF7;}
+td strong{color:var(--r);}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin:13px 0;}
+.gc{border:1px solid var(--b);border-radius:10px;overflow:hidden;}
+.gh{padding:12px 16px;font-size:13px;font-weight:700;color:#fff;}
+.gh.navy{background:var(--n);}
+.gh.red{background:var(--r);}
+.gh.grn{background:var(--g);}
+.gh.gry{background:#444;}
+.gh.amb{background:var(--a);}
+.gb{background:var(--w);padding:14px 16px;}
+.gb li{list-style:none;padding:5px 0;font-size:13px;color:var(--s);border-bottom:1px solid var(--b);}
+.gb li:last-child{border-bottom:none;}
+.gb li::before{content:'→ ';color:var(--r);font-weight:700;}
+.flow{display:flex;align-items:stretch;flex-wrap:wrap;margin:14px 0;}
+.fi{flex:1;min-width:90px;background:var(--w);border:1px solid var(--b);padding:12px 10px;text-align:center;font-size:12px;font-weight:600;line-height:1.4;}
+.fi.act{background:var(--r);color:#fff;border-color:var(--r);}
+.fi.grn{background:var(--g);color:#fff;border-color:var(--g);}
+.fi small{display:block;font-size:10px;font-weight:400;margin-top:3px;opacity:.75;}
+.fa{display:flex;align-items:center;color:var(--m);font-size:14px;padding:0 3px;}
+.tl{list-style:none;padding:0;}
+.ti{display:grid;grid-template-columns:155px 1fr;gap:14px;padding:13px 0;border-bottom:1px solid var(--b);align-items:start;}
+.ti:last-child{border-bottom:none;}
+.tw{font-weight:700;font-size:13.5px;color:var(--r);}
+.tw span{display:block;font-size:10.5px;font-weight:400;color:var(--m);margin-top:2px;}
+.td{font-size:13.5px;color:var(--t);line-height:1.65;}
+.td .eg{display:block;margin-top:5px;font-size:12px;color:var(--m);background:var(--bg);padding:5px 9px;border-radius:5px;border-left:2px solid var(--b);}
+.tag{display:inline-block;padding:2px 8px;border-radius:3px;font-size:11px;font-weight:700;margin:2px;}
+.tag.r{background:var(--rl);color:var(--r);}
+.tag.n{background:var(--nl);color:var(--n);}
+.tag.g{background:var(--gl);color:var(--g);}
+.tag.a{background:var(--al);color:var(--a);}
+.tag.k{background:#1A1A1A;color:#fff;}
+.tag.new{background:var(--r);color:#fff;}
+.tr2{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--b);}
+.tr2:last-child{border-bottom:none;}
+.tn{font-size:34px;font-weight:900;color:var(--b);font-family:'Noto Serif KR';line-height:1;flex-shrink:0;width:44px;}
+.tc h4{font-size:14px;font-weight:700;margin-bottom:5px;}
+.tc p{font-size:13px;color:var(--s);line-height:1.65;}
+.qb{background:var(--w);border:1px solid var(--b);border-radius:10px;margin:10px 0;overflow:hidden;}
+.qr{display:grid;grid-template-columns:90px 1fr;border-bottom:1px solid var(--b);}
+.qr:last-child{border-bottom:none;}
+.ql{background:#F3F1EC;padding:13px 14px;font-size:11px;font-weight:700;color:var(--s);display:flex;align-items:flex-start;}
+.qc{padding:13px 16px;font-size:13.5px;line-height:1.65;}
+.rating{display:flex;gap:3px;margin-top:4px;}
+.star{color:#FFB300;font-size:13px;}
+.comp-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:14px 0;}
+.comp-item{background:var(--w);border:1px solid var(--b);border-radius:10px;overflow:hidden;}
+.comp-head{padding:12px 14px;font-size:13px;font-weight:700;color:#fff;}
+.comp-head.r1{background:#D93B1E;}
+.comp-head.r2{background:#2E6DA4;}
+.comp-head.r3{background:#2E7D32;}
+.comp-body{padding:14px;font-size:12.5px;color:var(--s);}
+.comp-body li{list-style:none;padding:4px 0;border-bottom:1px solid var(--b);}
+.comp-body li:last-child{border-bottom:none;}
+.comp-body li::before{content:'· ';}
+@media(max-width:640px){
+  .hero{padding:36px 18px 30px;}
+  .hero h1{font-size:24px;}
+  .wrap{padding:24px 16px 80px;}
+  .toc{padding:0 10px;}
+  .g2,.comp-row{grid-template-columns:1fr;}
+  .ti{grid-template-columns:1fr;gap:3px;}
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">🔥 한화생명금융서비스 1차 면접 D-7</div>
+  <h1>
+    <span class="small">보험 몰라도 괜찮아 — 지금부터 시작하면 돼</span>
+    보험 <span class="accent">완전정복</span><br>벼락치기 가이드
+  </h1>
+  <div class="hero-desc">면접 전날까지만 읽어도 충분 · 실손 5세대 · 수수료 개편 · 경쟁사 비교 전부 반영</div>
+  <div class="chips">
+    <span class="chip">① 보험의 원리</span>
+    <span class="chip">② 생명 vs 손해보험</span>
+    <span class="chip">③ 상품 종류 + 실손 5세대</span>
+    <span class="chip">④ GA·제판분리</span>
+    <span class="chip">⑤ 한금서 분석</span>
+    <span class="chip">⑥ 경쟁사 비교</span>
+    <span class="chip new">⑦ FP 수수료 구조 NEW</span>
+    <span class="chip new">⑧ 감독기관 NEW</span>
+    <span class="chip">⑨ 핵심 용어 30+</span>
+    <span class="chip">⑩ 업계 트렌드</span>
+    <span class="chip new">⑪ 해피콜 NEW</span>
+    <span class="chip new">⑫ 자격 취득 과정 NEW</span>
+    <span class="chip new">⑬ 면접 질문 10개 NEW</span>
+  </div>
+</div>
+
+<nav class="toc">
+  <a href="#s1">① 보험이란</a>
+  <a href="#s2">② 보험 종류</a>
+  <a href="#s3">③ 상품·실손</a>
+  <a href="#s4">④ GA·제판분리</a>
+  <a href="#s5">⑤ 한금서·경쟁사</a>
+  <a href="#s6">⑥ FP·지점구조</a>
+  <a href="#s7">⑦ FP수수료</a>
+  <a href="#s8">⑧ 감독기관</a>
+  <a href="#s9">⑨ 자격·해피콜</a>
+  <a href="#s10">⑩ 핵심용어</a>
+  <a href="#s11">⑪ 업계트렌드</a>
+  <a href="#s12">⑫ 면접연결</a>
+</nav>
+
+<div class="wrap">
+
+<!-- ① 보험이란 -->
+<div class="sec" id="s1">
+  <div class="sec-head"><div class="sec-num">1</div><div class="sec-title">보험이란 무엇인가 <span class="sec-sub">Insurance Fundamentals</span></div></div>
+  <div class="call r">
+    <div class="cl">핵심 정의</div>
+    <p><strong>불확실한 미래의 위험</strong>에 대비하기 위해, 다수의 사람이 <strong>보험료를 납입</strong>해 공동 기금을 만들고, 사고가 발생한 사람에게 <strong>보험금을 지급</strong>하는 상호부조 시스템이다.</p>
+  </div>
+  <div class="card">
+    <h4>보험의 3가지 핵심 원리</h4>
+    <div class="tbl"><table>
+      <tr><th>원리</th><th>의미</th><th>실제 예시</th></tr>
+      <tr><td><strong>대수의 법칙</strong></td><td>가입자가 많을수록 사고 확률이 예측 가능해지고 위험이 분산됨</td><td>100만 명이 가입하면 사망 통계가 안정적으로 계산됨</td></tr>
+      <tr><td><strong>수지상등의 원칙</strong></td><td>장기적으로 보험료 총합 = 보험금 총합이 되도록 설계</td><td>보험사가 장기적으로 균형점에서 운영되도록 보험료 책정</td></tr>
+      <tr><td><strong>급부·반대급부 균등</strong></td><td>개인의 보험료는 그 사람의 위험 확률에 비례</td><td>나이가 많거나 건강이 나쁠수록 보험료가 비싼 이유</td></tr>
+    </table></div>
+  </div>
+  <div class="call dk">
+    <div class="cl">면접에서 이렇게 쓰세요</div>
+    <p>한화생명금융서비스 핵심 가치 <strong>"보험은 약속"</strong>과 직결됩니다. 보험은 계약 당시에는 가치를 느끼기 어렵지만, 사고가 났을 때 비로소 그 약속의 무게가 드러납니다. FP가 상품을 제대로 설명하지 않으면 고객이 필요한 순간에 약속을 받지 못합니다. 지점장의 가장 중요한 책무가 불완전판매 방지인 이유입니다.</p>
+  </div>
+</div>
+
+<!-- ② 보험 종류 -->
+<div class="sec" id="s2">
+  <div class="sec-head"><div class="sec-num">2</div><div class="sec-title">보험의 종류 <span class="sec-sub">생명 vs 손해 vs 제3보험</span></div></div>
+  <div class="g2">
+    <div class="gc"><div class="gh navy">생명보험 (Life Insurance)</div>
+      <div class="gb"><ul>
+        <li>사람의 <strong>생명·신체</strong>에 관한 위험 보장</li>
+        <li>사망·생존·장수를 보험사고로 함</li>
+        <li>장기 계약 중심 (10~30년)</li>
+        <li><strong>정액 지급</strong> — 약정금액 그대로</li>
+        <li>한화생명, 삼성생명, 교보생명 등</li>
+        <li><strong>한금서 주력 채널</strong></li>
+      </ul></div>
+    </div>
+    <div class="gc"><div class="gh red">손해보험 (Non-Life Insurance)</div>
+      <div class="gb"><ul>
+        <li><strong>재산상의 손해</strong>·배상책임 보장</li>
+        <li>화재·자동차·배상책임 등</li>
+        <li>단기·갱신형 계약 多</li>
+        <li><strong>실손 지급</strong> — 실제 손해액 기준</li>
+        <li>삼성화재, DB손보, 현대해상 등</li>
+        <li>한금서도 제휴로 판매 가능</li>
+      </ul></div>
+    </div>
+  </div>
+  <div class="call a">
+    <div class="cl">중요 — 제3보험 (Third Sector)</div>
+    <p>상해·질병·간병보험은 <strong>제3보험</strong>으로, 생명보험사와 손해보험사 <strong>모두</strong> 판매 가능합니다.<br>
+    → <strong>실손의료보험(실손보험)</strong>이 여기 해당 (가입자 4,000만명)<br>
+    → 한금서 FP는 생명·손해·제3보험 모두 통합 컨설팅 가능</p>
+  </div>
+  <div class="card">
+    <h4>보험 판매 채널 구조</h4>
+    <div class="flow">
+      <div class="fi">전속 설계사<small>특정 보험사만</small></div><div class="fa">→</div>
+      <div class="fi act">GA 설계사<small>여러 보험사 비교</small></div><div class="fa">→</div>
+      <div class="fi">방카슈랑스<small>은행 창구</small></div><div class="fa">→</div>
+      <div class="fi">CM채널<small>온라인·앱</small></div>
+    </div>
+    <p style="font-size:13px;color:var(--m);margin-top:8px;">GA 채널이 최근 가장 빠르게 성장 중. 2023년 처음으로 전속 채널 판매 비중을 추월했습니다.</p>
+  </div>
+</div>
+
+<!-- ③ 상품·실손 -->
+<div class="sec" id="s3">
+  <div class="sec-head"><div class="sec-num">3</div><div class="sec-title">주요 보험 상품 + 실손보험 5세대 <span class="sec-sub">Products & 실손 개편</span></div></div>
+  <div class="tbl"><table>
+    <tr><th>상품</th><th>핵심 특징</th><th>주요 고객</th><th>구분</th></tr>
+    <tr><td><strong>종신보험</strong></td><td>사망 시 <em>언제든</em> 지급. 평생 보장. 보험료 높음</td><td>가족 부양 가장, 상속 설계 필요</td><td><span class="tag r">생명</span></td></tr>
+    <tr><td><strong>정기보험</strong></td><td>일정 <em>기간 내</em> 사망 시만 지급. 보험료 저렴</td><td>자녀 독립 전까지만 보장 원하는 고객</td><td><span class="tag r">생명</span></td></tr>
+    <tr><td><strong>암보험</strong></td><td>암 진단·수술·치료비 보장. 3대 질병으로 확장 가능</td><td>가족 암 병력, 건강 불안 고객</td><td><span class="tag a">제3</span></td></tr>
+    <tr><td><strong>실손보험</strong></td><td>실제 의료비 실손 보상. 국민 4천만명 가입. <strong>2026.5 5세대 출시</strong></td><td>거의 모든 사람 (사실상 필수)</td><td><span class="tag a">제3</span></td></tr>
+    <tr><td><strong>연금보험</strong></td><td>납입 후 노후에 연금 형태 지급. 국민연금 보완</td><td>노후 소득 준비 고객</td><td><span class="tag r">생명</span></td></tr>
+    <tr><td><strong>저축성보험</strong></td><td>만기 시 납입보험료 이상 환급. 저금리에 매력 하락</td><td>목돈 마련, 중장기 저축 목적</td><td><span class="tag r">생명</span></td></tr>
+    <tr><td><strong>변액보험</strong></td><td>보험료 일부를 펀드에 투자. <em>원금 손실 가능</em>. 별도 자격 필요</td><td>투자+보장 원하는 위험 감수 고객</td><td><span class="tag r">생명</span></td></tr>
+    <tr><td><strong>간병보험</strong></td><td>치매·장기요양 시 지급. 고령화로 수요 급증</td><td>고령 부모 부양, 노후 간병 준비</td><td><span class="tag a">제3</span></td></tr>
+  </table></div>
+
+  <div class="card" style="margin-top:20px;">
+    <h4>실손보험 세대별 변천 <span class="tag new">최신</span></h4>
+    <div class="tbl"><table>
+      <tr><th>세대</th><th>기간</th><th>핵심 특징</th><th>현황</th></tr>
+      <tr><td><strong>1세대</strong></td><td>~2009.9</td><td>자기부담금 거의 없음. 보장 가장 넓음. 보험료 높음</td><td>신규 불가. 보유자 절대 해지 금지</td></tr>
+      <tr><td><strong>2세대</strong></td><td>2009~2017.3</td><td>표준화 시작. 표준형/선택형 구분</td><td>신규 불가. 순차 5세대 전환 예정</td></tr>
+      <tr><td><strong>3세대</strong></td><td>2017~2021.6</td><td>도수치료·MRI 등 비급여 특약 분리. 손해율 최고(128.5%)</td><td>신규 불가. 순차 5세대 전환 예정</td></tr>
+      <tr><td><strong>4세대</strong></td><td>2021.7~2026.5</td><td>비급여 이용량에 따라 보험료 차등(할인·할증). 자기부담 20~30%</td><td>2026.5.6 신규 판매 종료</td></tr>
+      <tr><td><strong>5세대</strong> <span class="tag new">2026.5 출시</span></td><td>2026.5.6~</td><td>보험료 30~50% 인하. 중증 중심 보장 유지. 비중증 비급여 보장 대폭 축소</td><td>현재 유일하게 신규 가입 가능</td></tr>
+    </table></div>
+    <div class="call warn" style="margin-top:12px;">
+      <div class="cl">5세대 핵심 변화</div>
+      <p>
+        <strong>보험료:</strong> 4세대 대비 30%, 1·2세대 대비 50% 이상 인하<br>
+        <strong>중증 비급여 (특약1):</strong> 암·심혈관·뇌·희귀난치 등 → 기존 수준 유지, 연간 자기부담 상한 500만원 신설<br>
+        <strong>비중증 비급여 (특약2):</strong> 도수치료·비급여 주사 등 → 자기부담률 50%로 상향, 한도 5,000만→1,000만원으로 축소<br>
+        <strong>임신·출산 급여 의료비</strong> 처음으로 보장 범위에 포함
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ④ GA·제판분리 -->
+<div class="sec" id="s4">
+  <div class="sec-head"><div class="sec-num">4</div><div class="sec-title">GA 구조와 제판분리 <span class="sec-sub">General Agency</span></div></div>
+  <div class="call r">
+    <div class="cl">GA (General Agency) 란?</div>
+    <p><strong>법인보험대리점</strong>의 줄임말. 특정 보험사에 종속되지 않고 <strong>여러 보험사의 상품을 비교·판매</strong>하는 독립 판매 조직. 2000년대 초 등장해 2023년 처음으로 전속 채널 판매 비중을 추월했습니다.</p>
+  </div>
+  <div class="g2">
+    <div class="gc"><div class="gh gry">전속 채널 (과거 방식)</div>
+      <div class="gb"><ul>
+        <li>특정 보험사 1곳 상품만 판매</li>
+        <li>보험사가 직접 교육·관리</li>
+        <li>상품 선택 폭이 좁음</li>
+        <li>고객이 최적 상품 못 받을 수 있음</li>
+        <li>비중 지속 감소 추세</li>
+      </ul></div>
+    </div>
+    <div class="gc"><div class="gh red">GA 채널 (한금서 방식)</div>
+      <div class="gb"><ul>
+        <li><strong>여러 보험사</strong> 상품 비교 판매</li>
+        <li>GA 자체 교육·관리 시스템</li>
+        <li>상품 선택 폭이 넓음</li>
+        <li>고객에게 최적 상품 추천 가능</li>
+        <li>비중 빠르게 증가 중</li>
+      </ul></div>
+    </div>
+  </div>
+  <div class="card">
+    <h4>제판분리(製販分離)란?</h4>
+    <p style="font-size:13.5px;color:var(--s);margin-bottom:14px;">보험의 <strong>제조(상품 개발·언더라이팅)</strong>와 <strong>판매(영업·FP 관리)</strong>를 분리하는 경영 전략.</p>
+    <div class="flow">
+      <div class="fi">한화생명<small>상품 개발·보험금 지급</small></div><div class="fa">→</div>
+      <div class="fi act">한화생명금융서비스<small>FP 채용·교육·영업·관리</small></div><div class="fa">→</div>
+      <div class="fi">고객<small>보험 가입·유지</small></div>
+    </div>
+    <div class="call g" style="margin-top:14px;">
+      <div class="cl">제판분리의 핵심 장점</div>
+      <ul>
+        <li>보험사는 상품 개발, GA는 영업에 집중 → <strong>전문성·효율성 향상</strong></li>
+        <li>FP가 한화생명 외 타사 좋은 상품도 추천 가능 → <strong>고객 만족도 향상</strong></li>
+        <li>FP 소득이 다양한 보험사 수수료로 분산 → <strong>FP 수익 안정성 향상</strong></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ⑤ 한금서·경쟁사 -->
+<div class="sec" id="s5">
+  <div class="sec-head"><div class="sec-num">5</div><div class="sec-title">한금서 분석 + 경쟁사 비교 <span class="sec-sub">HLFS & Competitors</span></div></div>
+  <div class="tbl"><table>
+    <tr><th>항목</th><th>내용</th></tr>
+    <tr><td><strong>설립</strong></td><td>2021년 (한화생명 제판분리 독립 — 국내 최초 자회사형 GA)</td></tr>
+    <tr><td><strong>규모</strong></td><td>설계사 25,144명(국내 1위) · 임직원 약 1,400명 · 지점 530개</td></tr>
+    <tr><td><strong>매출</strong></td><td>약 2조원 (국내 GA 압도적 1위)</td></tr>
+    <tr><td><strong>취급 상품</strong></td><td>한화생명 + 주요 생·손보사 상품 통합 취급</td></tr>
+    <tr><td><strong>디지털 플랫폼</strong></td><td>오렌지트리(영업지원) · 오렌지터치(고객관리)</td></tr>
+    <tr><td><strong>비전</strong></td><td>Total Life Solution / Make-achieve</td></tr>
+    <tr><td><strong>핵심 가치</strong></td><td>"보험은 약속" / "나의 오늘보다 더욱 빛날 내일을"</td></tr>
+    <tr><td><strong>대표</strong></td><td>최승영 대표이사</td></tr>
+  </table></div>
+
+  <div class="card" style="margin-top:20px;">
+    <h4>국내 주요 GA 경쟁사 비교 <span class="tag new">NEW</span></h4>
+    <div class="comp-row">
+      <div class="comp-item">
+        <div class="comp-head r1">🥇 한화생명금융서비스</div>
+        <div class="comp-body"><ul>
+          <li><strong>설계사 25,144명 (1위)</strong></li>
+          <li>자회사형 GA (한화생명 자회사)</li>
+          <li>오렌지트리·오렌지터치 디지털 강점</li>
+          <li>체계적 지점장 육성 시스템</li>
+          <li>2025.12 GA 브랜드평판 1위</li>
+        </ul></div>
+      </div>
+      <div class="comp-item">
+        <div class="comp-head r2">🥈 인카금융서비스</div>
+        <div class="comp-body"><ul>
+          <li>설계사 16,715명 (2위)</li>
+          <li>독립형 GA (코넥스 상장)</li>
+          <li>30여개 보험사 제휴</li>
+          <li>가파른 성장세 (연 2,000명↑)</li>
+          <li>브랜드평판 1~2위권 경쟁</li>
+        </ul></div>
+      </div>
+      <div class="comp-item">
+        <div class="comp-head r3">🥉 지에이코리아</div>
+        <div class="comp-body"><ul>
+          <li>설계사 16,236명 (3위)</li>
+          <li>독립형 GA</li>
+          <li>지역 기반 영업 강점</li>
+          <li>글로벌금융판매(12,892명)</li>
+          <li>프라임에셋(8,673명) 도 상위권</li>
+        </ul></div>
+      </div>
+    </div>
+    <div class="call n" style="margin-top:12px;">
+      <div class="cl">한금서만의 차별점</div>
+      <ul>
+        <li><strong>규모 1위 + 자회사형:</strong> 독립 GA와 달리 한화생명의 자본·브랜드·인프라 지원을 받으며 안정성과 성장성을 동시에 보유</li>
+        <li><strong>디지털 인프라:</strong> 오렌지트리·오렌지터치는 경쟁 GA가 따라오기 어려운 수준의 통합 플랫폼</li>
+        <li><strong>지점장 사관학교:</strong> 체계적인 리더 육성 구조 — 경쟁 GA에 없는 차별화 포인트</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="g2" style="margin-top:16px;">
+    <div class="gc"><div class="gh red">🌳 오렌지트리 (영업지원)</div>
+      <div class="gb"><ul>
+        <li>여러 보험사 시스템 통합</li>
+        <li>로그인 1번으로 전 보험사 조회</li>
+        <li>상품 비교·설계 기능</li>
+        <li>FP 업무 효율 극대화</li>
+      </ul></div>
+    </div>
+    <div class="gc"><div class="gh navy">📱 오렌지터치 (고객관리)</div>
+      <div class="gb"><ul>
+        <li>고객 정보·계약 현황 관리</li>
+        <li>FP-고객 소통 채널</li>
+        <li>계약 유지율 모니터링</li>
+        <li>생애주기별 CRM 기능</li>
+      </ul></div>
+    </div>
+  </div>
+</div>
+
+<!-- ⑥ FP·지점구조 -->
+<div class="sec" id="s6">
+  <div class="sec-head"><div class="sec-num">6</div><div class="sec-title">FP의 역할과 지점 구조 <span class="sec-sub">Branch Structure</span></div></div>
+  <div class="card">
+    <h4>지점 구조 — 영업마케팅 직무의 위치</h4>
+    <div class="flow" style="margin-bottom:14px;">
+      <div class="fi">지역단장<small>여러 지점 총괄</small></div><div class="fa">→</div>
+      <div class="fi act">지점장<small>목표 직책</small></div><div class="fa">→</div>
+      <div class="fi" style="background:#FFF5F3;border-color:var(--r);">총무 Staff<small>신입 시작</small></div><div class="fa">→</div>
+      <div class="fi">FP 30~50명<small>관리 대상</small></div>
+    </div>
+    <div class="tbl"><table>
+      <tr><th>직책</th><th>주요 업무</th></tr>
+      <tr><td><strong>총무 Staff</strong><br><span class="tag r">신입 시작</span></td>
+        <td>지점장 업무 보조·학습 / 교육 자료 준비·배포 / 고객 데이터·판매 현황·유지율 정리 / FP 영업 활동 지원 / 잡세미나·CIS 보조 / 신규 FP 온보딩 지원</td></tr>
+      <tr><td><strong>지점장</strong><br><span class="tag k">목표 직책</span></td>
+        <td>FP 채용 (잡세미나 주관·CIS 1:1 면담) / FP 일일 교육·조회 운영 / FP 급여 면담·성과 관리 / 지점 운영 전반 (인사·예산·행정) / 고객 VIP 관리·현장 동행</td></tr>
+    </table></div>
+  </div>
+  <div class="card">
+    <h4>FP 채용 프로세스</h4>
+    <div class="qb">
+      <div class="qr"><div class="ql">잡세미나</div><div class="qc">FP 직업 설명회. 지점장(총무 보조)이 FP 직업의 매력을 설명하고 관심 있는 잠재 FP를 발굴하는 자리</div></div>
+      <div class="qr"><div class="ql">CIS</div><div class="qc">Career Interview Session. 잡세미나 참석자와 1:1 면담을 진행하며 FP 입사를 설득하는 과정</div></div>
+      <div class="qr"><div class="ql">온보딩</div><div class="qc">신규 FP 초기 적응 지원. 상품 교육·영업 동행·멘토링으로 조기 이탈 방지. 정착률 향상의 핵심</div></div>
+    </div>
+  </div>
+  <div class="call dk">
+    <div class="cl">총무 → 지점장 발탁 기간</div>
+    <p>합격 후기 기준 최단 <strong>6개월</strong>, 평균 <strong>10개월~1년</strong> 사이 발탁 사례 다수. FP들의 신뢰를 빠르게 쌓고, 지점 데이터를 파악하며 문제 해결력을 보여주는 것이 핵심.</p>
+  </div>
+</div>
+
+<!-- ⑦ FP 수수료 -->
+<div class="sec" id="s7">
+  <div class="sec-head"><div class="sec-num new">7</div><div class="sec-title">FP 수수료 구조 <span class="new-badge">NEW</span><span class="sec-sub">Commission Structure</span></div></div>
+  <div class="call r">
+    <div class="cl">핵심 이해</div>
+    <p>FP는 보험사로부터 직접 급여를 받지 않습니다. <strong>보험 계약을 체결하면 수수료(수당)를 받는 사업자 성격</strong>입니다. 수수료 구조를 이해해야 FP를 관리하는 지점장의 역할을 이해할 수 있습니다.</p>
+  </div>
+  <div class="card">
+    <h4>FP 수수료의 두 가지 종류</h4>
+    <div class="g2">
+      <div class="gc"><div class="gh red">신계약 수수료 (판매수수료)</div>
+        <div class="gb"><ul>
+          <li>새 계약 체결 시 지급</li>
+          <li>월납보험료의 수백~1200% 수준</li>
+          <li>상품마다 차이 큼</li>
+          <li>종신보험 수수료 가장 높음</li>
+          <li>계약 초기에 집중 지급 (선지급)</li>
+        </ul></div>
+      </div>
+      <div class="gc"><div class="gh navy">유지수수료 (계약관리비용)</div>
+        <div class="gb"><ul>
+          <li>기존 계약이 유지될 때 매월 지급</li>
+          <li>신계약 수수료보다 금액 적음</li>
+          <li>계약 유지 기간 동안 계속 수령</li>
+          <li><strong>유지율 관리의 동기</strong></li>
+          <li>장기 안정 수입의 기반</li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <h4>2025년 수수료 개편 <span class="tag new">최신 이슈</span></h4>
+    <div class="call warn">
+      <div class="cl">핵심 변화</div>
+      <p>
+        <strong>1200%룰 GA 확대 적용 (2025 하반기~):</strong> 기존 전속 설계사에만 적용되던 첫 1년 수수료 상한(월납보험료의 1200%)이 GA 소속 FP에게도 적용됩니다.<br><br>
+        <strong>4년 분급 방향 (2026~):</strong> 현재 13개월 내 선지급되는 수수료를 최장 4년에 걸쳐 나눠 지급하는 방향으로 개편 추진 중. FP가 계약을 장기적으로 유지·관리할 유인을 높이기 위한 조치.<br><br>
+        <strong>판매수수료 공개 (2026.3~):</strong> 보험설계사의 판매수수료 정보가 협회 홈페이지에 공시됩니다.
+      </p>
+    </div>
+    <div class="call n" style="margin-top:12px;">
+      <div class="cl">지점장과의 연결</div>
+      <p>수수료 개편으로 FP들이 초기 수수료보다 <strong>계약 유지율</strong>에 더 신경 써야 합니다. 지점장이 FP의 <strong>유지율 관리</strong>와 <strong>불완전판매 방지 교육</strong>을 더욱 체계적으로 해야 하는 배경입니다.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ⑧ 감독기관 -->
+<div class="sec" id="s8">
+  <div class="sec-head"><div class="sec-num new">8</div><div class="sec-title">보험업 감독기관 <span class="new-badge">NEW</span><span class="sec-sub">Regulatory Bodies</span></div></div>
+  <div class="card">
+    <h4>3개 기관의 역할 구분</h4>
+    <div class="tbl"><table>
+      <tr><th>기관</th><th>성격</th><th>주요 역할</th><th>면접 포인트</th></tr>
+      <tr>
+        <td><strong>금융위원회</strong><br><span class="tag n">FSC</span></td>
+        <td>정책 수립 기관</td>
+        <td>보험업 법령·정책 수립, 인허가 결정, 제도 개편 주도 (실손보험 개편, 수수료 개편 등)</td>
+        <td>"불완전판매 규제를 강화하는 정책을 발표한 곳"</td>
+      </tr>
+      <tr>
+        <td><strong>금융감독원</strong><br><span class="tag r">FSS</span></td>
+        <td>감독·검사 기관</td>
+        <td>보험사·GA 현장 검사, 민원 처리, 불완전판매 적발·제재, 내부통제 평가</td>
+        <td>"대형 GA 내부통제 실태 평가를 실시하는 곳"</td>
+      </tr>
+      <tr>
+        <td><strong>생명보험협회</strong><br><span class="tag g">KLIA</span></td>
+        <td>자율규제 기관</td>
+        <td>생명보험사 자율 규제, FP 자격 교육·시험 관리, 소비자 보호 활동</td>
+        <td>"FP 자격증 시험을 관리하는 곳"</td>
+      </tr>
+    </table></div>
+  </div>
+  <div class="call n">
+    <div class="cl">면접에서 이렇게 쓰세요</div>
+    <p>면접에서 "금융 규제 기관이 어디냐"는 질문보다, <strong>"요즘 감독기관이 어떤 방향으로 규제를 강화하고 있냐"</strong>는 질문이 더 자주 나옵니다. 답변: "금융감독원의 GA 내부통제 평가와 금융위원회의 수수료 개편, 불완전판매 규제 강화가 최근 가장 중요한 이슈입니다."</p>
+  </div>
+</div>
+
+<!-- ⑨ 자격·해피콜 -->
+<div class="sec" id="s9">
+  <div class="sec-head"><div class="sec-num new">9</div><div class="sec-title">보험설계사 자격 + 해피콜 <span class="new-badge">NEW</span></div></div>
+  <div class="card">
+    <h4>FP(보험설계사) 자격 취득 과정</h4>
+    <div class="flow" style="margin-bottom:14px;">
+      <div class="fi grn">교육 이수<small>생명·손해보험협회</small></div><div class="fa">→</div>
+      <div class="fi">자격시험 합격<small>협회 주관 필기</small></div><div class="fa">→</div>
+      <div class="fi act">설계사 등록<small>금융감독원</small></div><div class="fa">→</div>
+      <div class="fi">영업 개시</div>
+    </div>
+    <div class="tbl"><table>
+      <tr><th>자격 종류</th><th>주관 기관</th><th>비고</th></tr>
+      <tr><td><strong>생명보험 설계사</strong></td><td>생명보험협회</td><td>종신·연금·암보험 등 판매 가능</td></tr>
+      <tr><td><strong>손해보험 설계사</strong></td><td>손해보험협회</td><td>자동차·화재·실손보험 등 판매 가능</td></tr>
+      <tr><td><strong>제3보험 설계사</strong></td><td>생명·손해보험협회</td><td>상해·질병·간병보험 판매 가능</td></tr>
+      <tr><td><strong>변액보험판매관리사</strong></td><td>생명보험협회</td><td>변액보험 판매 시 추가로 필수 취득</td></tr>
+    </table></div>
+    <div class="call g" style="margin-top:12px;">
+      <div class="cl">총무와의 연결</div>
+      <p>총무 기간에 신규 FP 온보딩을 지원할 때, FP가 자격 취득 과정을 잘 통과하도록 돕는 것이 중요한 역할입니다. 정착률을 높이려면 자격 취득 단계부터 밀착 지원해야 합니다.</p>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:16px;">
+    <h4>완전판매모니터링 (해피콜) <span class="tag new">NEW</span></h4>
+    <div class="call r">
+      <div class="cl">해피콜이란?</div>
+      <p>보험 계약 체결 후 <strong>보험사 직원이 고객에게 직접 전화</strong>하여 계약 내용(보장 범위, 납입 기간, 면책 사항 등)을 제대로 설명 들었는지 확인하는 제도입니다. <strong>불완전판매 방지</strong>의 핵심 장치입니다.</p>
+    </div>
+    <div class="tbl"><table>
+      <tr><th>항목</th><th>내용</th></tr>
+      <tr><td><strong>실시 시점</strong></td><td>계약 체결 후 통상 2주 이내</td></tr>
+      <tr><td><strong>확인 내용</strong></td><td>상품 내용 설명 여부, 가입 의사 확인, 주요 사항 이해 여부</td></tr>
+      <tr><td><strong>결과</strong></td><td>이상 없으면 계약 확정 / 문제 있으면 계약 취소·수정 가능</td></tr>
+      <tr><td><strong>지점장과의 관계</strong></td><td>해피콜 불통과율이 높으면 해당 FP의 불완전판매 교육 즉시 강화</td></tr>
+    </table></div>
+    <div class="call n" style="margin-top:12px;">
+      <div class="cl">왜 중요한가</div>
+      <p>해피콜에서 고객이 "설명 못 들었다"고 답하면 불완전판매로 기록됩니다. 지점 단위로 불완전판매율이 집계되어 지점장 성과 평가에 직결됩니다. 지점장이 FP 교육을 철저히 해야 하는 가장 직접적인 이유입니다.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ⑩ 핵심 용어 -->
+<div class="sec" id="s10">
+  <div class="sec-head"><div class="sec-num">10</div><div class="sec-title">반드시 알아야 할 핵심 용어 <span class="sec-sub">Key Terminology 30+</span></div></div>
+  <div class="card">
+    <h4>계약 기본 용어</h4>
+    <ul class="tl">
+      <div class="ti"><div class="tw">보험료<span>Premium</span></div><div class="td">계약자가 보험사에 정기적으로 납입하는 돈. 보장의 대가.<span class="eg">예: "월 10만원 납입" → 이 10만원이 보험료</span></div></div>
+      <div class="ti"><div class="tw">보험금<span>Benefit</span></div><div class="td">보험 사고 발생 시 보험사가 계약에 따라 지급하는 돈.<span class="eg">예: 암 진단 시 5,000만원 지급 → 이 금액이 보험금</span></div></div>
+      <div class="ti"><div class="tw">계약자</div><div class="td">보험 계약을 체결하고 보험료 납입 의무를 지는 사람. 피보험자와 동일인일 필요 없음.</div></div>
+      <div class="ti"><div class="tw">피보험자</div><div class="td">보험 보장의 대상이 되는 사람.<span class="eg">예: 부모가 자녀 보험 가입 → 계약자=부모, 피보험자=자녀</span></div></div>
+      <div class="ti"><div class="tw">수익자</div><div class="td">보험금을 실제로 수령하는 사람. 사망보험의 경우 법정상속인 또는 지정 수익자.</div></div>
+      <div class="ti"><div class="tw">해약환급금</div><div class="td">계약을 중도 해지할 때 돌려받는 금액. 납입 보험료보다 적은 것이 일반적.<span class="eg">초기 해지 시 거의 없는 경우도 있어 고객 설명이 중요</span></div></div>
+      <div class="ti"><div class="tw">면책기간</div><div class="td">가입 후 일정 기간 동안 특정 보험금을 지급하지 않는 기간.<span class="eg">암보험 90일 면책 → 이 기간 내 암 진단 시 보험금 미지급</span></div></div>
+      <div class="ti"><div class="tw">언더라이팅</div><div class="td">보험 가입 심사. 피보험자의 건강·직업·나이 등을 평가하여 가입 가능 여부와 보험료를 결정.</div></div>
+    </ul>
+  </div>
+  <div class="card">
+    <h4>영업·성과 관련 용어</h4>
+    <ul class="tl">
+      <div class="ti"><div class="tw">신계약<span>New Policy</span></div><div class="td">일정 기간 중 새로 체결된 보험 계약. FP의 핵심 성과 지표.<span class="eg">월별 신계약 건수가 FP 실적 평가의 기본</span></div></div>
+      <div class="ti"><div class="tw">APE<span>연납화보험료</span></div><div class="td">신규 매출의 표준 평가 지표. 월납·분기납·연납·일시납을 연간 기준으로 환산한 값.<span class="eg">월납 10만원 → APE = 120만원</span></div></div>
+      <div class="ti"><div class="tw">유지율<span>Persistency</span></div><div class="td">보험 계약이 효력을 유지하는 비율. 13회차·25회차 유지율이 핵심 지표.<span class="eg">유지율 낮으면 FP 설명 부족·불완전판매 신호일 수 있음</span></div></div>
+      <div class="ti"><div class="tw">정착률</div><div class="td">신입 FP가 일정 기간(통상 1년) 후에도 활동을 유지하는 비율. 지점 건강성의 핵심 지표.</div></div>
+      <div class="ti"><div class="tw">활동률</div><div class="td">전체 FP 중 실제로 영업 활동을 하는 FP의 비율. 지점장이 매일 관리해야 할 수치.</div></div>
+      <div class="ti"><div class="tw">손해율<span>Loss Ratio</span></div><div class="td">보험금 ÷ 보험료. 100% 초과 시 보험사 적자. 보험사 경영 건전성 지표.<span class="eg">3세대 실손 손해율 128.5% → 적자 → 5세대 개편 배경</span></div></div>
+      <div class="ti"><div class="tw">불완전판매</div><div class="td">계약자에게 중요 사항을 제대로 설명하지 않거나 잘못 설명하고 판매하는 행위. 민원·소송·과태료 원인.<span class="eg">지점장의 가장 중요한 책무가 불완전판매 방지 교육</span></div></div>
+      <div class="ti"><div class="tw">부당승환</div><div class="td">FP가 수수료를 더 받기 위해 고객의 기존 보험을 해지하고 새 보험으로 갈아타도록 유도하는 행위. 금지.</div></div>
+      <div class="ti"><div class="tw">해피콜</div><div class="td">계약 체결 후 보험사가 고객에게 직접 전화해 설명 여부를 확인하는 완전판매모니터링 제도.</div></div>
+      <div class="ti"><div class="tw">1200%룰</div><div class="td">보험설계사가 계약 체결 후 첫 1년 안에 받을 수 있는 수수료를 월납보험료의 1200%로 제한하는 규제. 2025년 GA 설계사에게도 확대 적용.</div></div>
+    </ul>
+  </div>
+</div>
+
+<!-- ⑪ 업계 트렌드 -->
+<div class="sec" id="s11">
+  <div class="sec-head"><div class="sec-num">11</div><div class="sec-title">보험업계 최신 트렌드 <span class="sec-sub">2024~2026 Key Issues</span></div></div>
+  <div class="card">
+    <div class="tr2"><div class="tn">01</div><div class="tc">
+      <h4><span class="tag k">핵심</span> GA 채널 급성장 — 처음으로 전속 채널 추월</h4>
+      <p>2023년 GA 채널 판매 비중이 처음으로 전속 채널을 추월했습니다. 고객이 여러 보험사 상품을 비교하고 싶은 수요가 늘면서 독립 대리점 선호가 높아졌습니다. 한금서는 이 흐름에서 설계사 수 25,144명으로 GA 압도적 1위를 선점한 상태입니다.</p>
+    </div></div>
+    <div class="tr2"><div class="tn">02</div><div class="tc">
+      <h4><span class="tag r">중요</span> IFRS17 도입 (2023년~) — 보장성 보험 중심으로 전환</h4>
+      <p>새로운 보험 국제회계기준(IFRS17)이 2023년부터 적용됩니다. 보험계약의 미래 수익을 현재 시점에서 인식하는 방식으로 바뀌면서 보장성 보험 중심 영업이 유리해졌고, 저축성 보험은 상대적으로 매력이 감소했습니다. 한금서 FP들이 보장성 보험에 집중하는 배경입니다.</p>
+    </div></div>
+    <div class="tr2"><div class="tn">03</div><div class="tc">
+      <h4><span class="tag new">2026</span> 실손보험 5세대 출시 (2026.5.6~)</h4>
+      <p>보험료 30~50% 인하, 비중증 비급여 보장 대폭 축소, 임신·출산 급여 의료비 보장 추가. 가입자 4,000만명에게 영향을 미치는 최대 이슈입니다. 기존 1~4세대 가입자의 5세대 전환 여부를 고객에게 올바르게 설명하는 것이 FP의 중요한 역할이 됩니다.</p>
+    </div></div>
+    <div class="tr2"><div class="tn">04</div><div class="tc">
+      <h4><span class="tag new">2025</span> FP 수수료 개편 — 4년 분급 + 수수료 공개</h4>
+      <p>FP 판매수수료를 최장 4년에 걸쳐 분급하는 방향으로 개편 추진 중입니다. 또한 2026년 3월부터 판매수수료 정보가 협회 홈페이지에 공시됩니다. FP가 계약 유지·관리에 더 집중해야 하는 구조로 바뀌어 지점장의 유지율 관리 역할이 더욱 중요해집니다.</p>
+    </div></div>
+    <div class="tr2"><div class="tn">05</div><div class="tc">
+      <h4><span class="tag n">주목</span> 고령화 사회 — 노후 보험 수요 급증</h4>
+      <p>2025년 초고령사회 진입(65세 이상 20% 초과). 치매·간병보험, 연금보험 수요가 급증하고 있습니다. FP 입장에서 노후 설계 역량이 점점 중요해지고 있으며, 지점장이 FP들에게 노후 상품 교육을 강화해야 합니다.</p>
+    </div></div>
+    <div class="tr2"><div class="tn">06</div><div class="tc">
+      <h4><span class="tag r">규제</span> 소비자보호·불완전판매 규제 강화</h4>
+      <p>금융감독원이 GA 내부통제 실태 평가를 정례화하고 있습니다. 대형 GA는 이제 금융회사에 준하는 내부통제 체계를 갖추도록 요구받습니다. 지점장이 FP 교육과 불완전판매 방지에 더욱 신경 써야 하는 배경입니다.</p>
+    </div></div>
+    <div class="tr2"><div class="tn">07</div><div class="tc">
+      <h4><span class="tag a">변화</span> MZ세대 FP 유입 확대</h4>
+      <p>과거 중장년 여성 중심의 FP 구성이 변화하고 있습니다. 20~30대 젊은 FP 유입이 늘면서 지점 내 세대 다양성이 커졌습니다. 지점장은 20년 경력 베테랑 FP와 신입 MZ 세대 FP를 모두 관리해야 하는 리더십이 필요합니다.</p>
+    </div></div>
+  </div>
+</div>
+
+<!-- ⑫ 면접 연결 -->
+<div class="sec" id="s12">
+  <div class="sec-head"><div class="sec-num new">12</div><div class="sec-title">면접 예상 질문 10개 + 답변 방향 <span class="new-badge">NEW</span></div></div>
+
+  <div class="qb" style="margin-bottom:12px;">
+    <div class="qr"><div class="ql" style="font-size:10px;">Q1<br>거의 확정</div><div class="qc"><strong>"영업마케팅 직무가 어떤 일을 하는지 아는가?"</strong><br><span style="color:var(--s);font-size:13px;">→ "총무로 현장을 먼저 익힌 뒤 지점장으로 성장하는 구조입니다. 총무로서 FP 채용·교육·지점 행정 전반을 익히고, 이후 FP들의 정착률과 활동률을 관리하는 지점장으로 발탁받는 것이 목표입니다."</span></div></div>
+    <div class="qr"><div class="ql" style="font-size:10px;">Q2<br>거의 확정</div><div class="qc"><strong>"지점장으로서 가장 중요한 역량이 뭐라고 생각하는가?"</strong><br><span style="color:var(--s);font-size:13px;">→ 막연한 "리더십"보다 구체적으로. "FP별 활동 흐름과 막히는 지점을 파악하고, 정착률 데이터를 보며 교육과 관리 방향을 조정하는 능력. 그리고 성과가 없는 날에도 기준을 잃지 않고 FP들을 다시 움직이게 하는 힘이라고 생각합니다."</span></div></div>
+    <div class="qr"><div class="ql" style="font-size:10px;">Q3<br>거의 확정</div><div class="qc"><strong>"왜 다른 보험사가 아닌 한화생명금융서비스인가?"</strong><br><span style="color:var(--s);font-size:13px;">→ GA·제판분리 개념을 활용. "전속 채널과 달리 여러 보험사 상품을 비교해 고객에게 최적 설계를 제안할 수 있다는 점, 오렌지트리·오렌지터치 같은 디지털 플랫폼으로 FP를 지원하는 인프라, 그리고 체계적인 지점장 육성 구조가 업계 최고 수준이라고 판단했습니다."</span></div></div>
+    <div class="qr"><div class="ql" style="font-size:10px;">Q4<br>자소서 기반</div><div class="qc"><strong>"자소서에 OOO 경험이 있는데 이게 직무에 어떻게 연결되나?"</strong><br><span style="color:var(--s);font-size:13px;">→ 자소서 3문항 전부 2분 내로 구술할 수 있도록 준비. 특히 수치(44.5%, 82%, Q1 8.03억)는 반드시 포함.</span></div></div>
+    <div class="qr"><div class="ql" style="font-size:10px;">Q5<br>시나리오</div><div class="qc"><strong>"FP들끼리 갈등이 생겼을 때 지점장으로서 어떻게 대응하겠는가?"</strong><br><span style="color:var(--s);font-size:13px;">→ 단계적 접근법으로 답변. "먼저 당사자 양측과 개별 1:1 면담을 통해 각자의 입장을 파악하고, 공통 목표(지점 성과)를 중심으로 중재하겠습니다. 직접 동행을 통해 일하는 방식을 관찰한 후 객관적 데이터로 피드백을 드리는 방향으로 접근하겠습니다."</span></div></div>
+    <div class="qr"><div class="ql" style="font-size:10px;">Q6<br>멘탈 확인</div><div class="qc"><strong>"보험 영업은 거절이 많은데 어떻게 버틸 자신이 있는가?"</strong><br><span style="color:var(--s);font-size:13px;">→ 재성님 자소서 1번 소재로 직접 답변. "현재 직장에서 1만 건 이상의 리드를 대응하며 계약이 안 되는 날에도 콜 수를 줄이지 않는 루틴을 만들었습니다. 영업은 성과가 없는 날 어떻게 버티느냐로 결정된다는 걸 몸으로 배웠습니다."</span></div></div>
+    <div class="qr"><div class="ql" style="font-size:10px;">Q7<br>2차 대비</div><div class="qc"><strong>"보험이란 무엇이라고 생각하는가?"</strong><br><span style="color:var(--s);font-size:13px;">→ "보험은 불확실한 미래에 대한 약속입니다. 고객이 사고를 당했을 때 계약 시 맺은 그 약속이 실제로 이행되는 것이 보험의 본질이라고 생각합니다. 그래서 FP가 처음 설계할 때 고객에게 정확히 설명하지 않으면 정작 필요한 순간에 약속이 깨지게 됩니다."</span></div></div>
+    <div class="qr"><div class="ql" style="font-size:10px;">Q8<br>2차 대비</div><div class="qc"><strong>"지점장이란 무엇이라고 생각하는가?"</strong><br><span style="color:var(--s);font-size:13px;">→ "지점을 경영하는 소사장이라고 생각합니다. FP들의 채용부터 교육, 성과 관리, 고객 관리까지 지점 전반을 책임지는 자리입니다. 단순히 실적을 독려하는 것이 아니라, FP 한 명 한 명이 고객에게 약속을 제대로 전달할 수 있도록 만드는 것이 지점장의 역할이라고 생각합니다."</span></div></div>
+    <div class="qr"><div class="ql" style="font-size:10px;">Q9<br>업계 이슈</div><div class="qc"><strong>"요즘 보험업계에서 가장 중요한 이슈가 뭐라고 생각하는가?"</strong><br><span style="color:var(--s);font-size:13px;">→ "두 가지라고 생각합니다. 첫째는 2026년 5세대 실손보험 출시로 인한 고객 상담 수요 증가입니다. 기존 가입자들이 전환 여부를 고민하는 과정에서 FP의 정확한 설명이 더욱 중요해집니다. 둘째는 수수료 개편으로 FP들이 계약 유지 관리에 더 집중해야 하는 환경이 만들어지고 있다는 점입니다."</span></div></div>
+    <div class="qr"><div class="ql" style="font-size:10px;">Q10<br>PT 꼬리</div><div class="qc"><strong>"그 방법을 쓰면 실제로 뭐가 달라지는가?"</strong><br><span style="color:var(--s);font-size:13px;">→ PT 발표 후 가장 자주 나오는 꼬리질문 패턴. 2025 합격자 후기에서 "동행하면 뭐가 달라지냐"가 합격 키였음. 핵심은 구체적인 변화를 말하는 것. "FP가 어디서 막히는지를 직접 보고 나서야 피드백이 가능합니다. 수치만 보면 '왜'를 모르지만, 동행하면 이유를 파악할 수 있고 그 이유에 맞는 교육 방향을 잡을 수 있습니다."</span></div></div>
+  </div>
+
+  <div class="call dk">
+    <div class="cl">면접 전날 이것만 기억하세요</div>
+    <ul>
+      <li><strong>보험 = 약속</strong> → 한금서 핵심 가치와 연결</li>
+      <li><strong>GA = 여러 보험사 비교 판매</strong> → 고객에게 최적 설계</li>
+      <li><strong>제판분리</strong> → 판매 전문화, 한화생명 자회사</li>
+      <li><strong>총무 → 지점장</strong> → 현장 학습 후 리더 트랙</li>
+      <li><strong>FP 정착률·활동률·유지율</strong> → 지점장이 매일 보는 숫자</li>
+      <li><strong>불완전판매 방지·해피콜</strong> → 지점장의 핵심 책무</li>
+      <li><strong>오렌지트리·오렌지터치</strong> → 한금서만의 디지털 강점</li>
+      <li><strong>5세대 실손보험 (2026.5 출시)</strong> → 최신 업계 이슈</li>
+      <li><strong>수수료 4년 분급 개편</strong> → FP 유지율 관리 더욱 중요해짐</li>
+      <li><strong>GA 설계사 수 1위: 한금서(25,144명)</strong> → 규모와 안정성 강점</li>
+    </ul>
+  </div>
+</div>
+
+</div>
+
+<div style="background:#1A1A1A;color:rgba(255,255,255,.4);text-align:center;padding:24px;font-size:12px;">
+  한화생명금융서비스 1차 면접 보험 공부 완전 정복 v2.0 · 재성님 전용 · 2026.05
+</div>
+</body>
+</html>
